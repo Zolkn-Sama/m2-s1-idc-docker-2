@@ -1,8 +1,8 @@
 FROM node:22-alpine
 WORKDIR /app
-COPY node_modules ./node_modules
-COPY . /app
-RUN npm install
+COPY package*.json ./
+RUN npm install --omit=dev
+COPY . .
 EXPOSE 3000 4000 5000
 ENV NODE_ENV=development
 RUN npm run build
