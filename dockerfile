@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:22-alpine
 WORKDIR /app
 COPY node_modules ./node_modules
 COPY . /app
