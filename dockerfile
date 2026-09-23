@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev
 COPY . .
-EXPOSE 3000 4000 5000
-ENV NODE_ENV=development
-USER root
+ENV NODE_ENV=production
+EXPOSE 3000
+USER node
 CMD ["node", "server.js"]
